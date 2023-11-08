@@ -1,0 +1,57 @@
+{
+    "L09": {
+        "fontsize": "17.0px",
+        "w": 3.3,
+        "h_txt": 1.1,
+        "h_traffic": 1.8,
+        "ncols": {
+            "Blistermaschine": 2,
+            "Tubenf�ller": 1,
+            "Kartonierer": 2,
+            "B�ndler": 1
+        }
+    },
+    "L36": {
+        "fontsize": "18.0px",
+        "w": 4,
+        "h_txt": 1.2,
+        "h_traffic": 2.0,
+        "ncols": {
+            "Tubenf�ller": 1,
+            "Kartonierer": 2,
+            "Endverpacker": 1
+        }
+    },
+    "L37": {
+        "fontsize": "18.0px",
+        "w": 4,
+        "h_txt": 1.2,
+        "h_traffic": 2.0,
+        "ncols": {
+            "Tubenf�ller": 1,
+            "Kartonierer": 3,
+            "B�ndl./Palett.": 1
+        }
+    },
+    "L38": {
+        "fontsize": "14.0px",
+        "w": 2.8,
+        "h_txt": 1.12,
+        "h_traffic": 1.8,
+        "ncols": {
+            "Tubenf�ller": 1,
+            "Kartonierer": 2,
+            "B�ndelpacker": 2,
+            "Endverpacker": 2
+        }
+    },
+    "EinstellwertueberwachungL09": {
+        "fontsize": "14.0px",
+        "w": 3,
+        "h_txt": 0.8,
+        "h_traffic": 1.4,
+        "ncols": {
+            "Einstellwert�berwachung L09": 7
+        }
+    }
+}

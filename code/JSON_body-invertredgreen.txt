@@ -1,0 +1,151 @@
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "%s"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "red"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Nein"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "green"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Ja"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "yellow"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "-"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "w": 0,
+                "h": 0,
+                "y": 0,
+                "static": true
+            },
+            "id": "%s"
+        },
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "color": "white",
+                    "textAlign": "center",
+                    "fontSize": "28px",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "backgroundColor": "transparent"
+                }
+            },
+            "id": "%s",
+            "layout": {
+                "x": %s,
+                "w": %s,
+                "h": %s,
+                "y": %s,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "text": "%s",
+            "options": {
+                "style": {
+                    "border": "none",
+                    "backgroundColor": "transparent",
+                    "fontSize": "%s",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "textAlign": "center"
+                }
+            },
+            "captionBar": {
+                "hidden": true
+            },
+            "id": "%s",
+            "layout": {
+                "x": %s,
+                "w": %s,
+                "h": %s,
+                "y": %s,
+                "static": true
+            }
+        }

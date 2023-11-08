@@ -1,0 +1,11 @@
+        {
+            class = syslib.model.classes.ActionItem,
+            operation = syslib.model.codes.MassOp.UPSERT,
+            path = base .. "%s",
+            ["ObjectName"] = "%s",
+            ["ObjectDescription"] = "Sensordashboard",
+		    ["AdvancedLuaScript"] = [=[
+%s
+            ]=]
+        },
+        

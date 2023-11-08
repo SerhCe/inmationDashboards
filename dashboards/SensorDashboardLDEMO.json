@@ -1,0 +1,983 @@
+{
+    "version": "1",
+    "widgets": [
+        {
+            "type": "text",
+            "name": "title",
+            "description": "Simple Text",
+            "text": "Bündler",
+            "captionBar": {
+                "hidden": true,
+                "title": "Simple Text Widget",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "backgroundColor": "transparent",
+                    "fontSize": "1.5vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "textAlign": "center"
+                }
+            },
+            "id": "title0",
+            "layout": {
+                "x": 0,
+                "w": 6.25,
+                "h": 1,
+                "y": 2,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "name": "title",
+            "description": "Simple Text",
+            "text": "Endverpacker",
+            "captionBar": {
+                "hidden": true,
+                "title": "Simple Text Widget",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "backgroundColor": "transparent",
+                    "fontSize": "1.5vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "textAlign": "center"
+                }
+            },
+            "id": "title1",
+            "layout": {
+                "x": 6.25,
+                "w": 6.25,
+                "h": 1,
+                "y": 2,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "name": "title",
+            "description": "Simple Text",
+            "text": "Aggregation",
+            "captionBar": {
+                "hidden": true,
+                "title": "Simple Text Widget",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "backgroundColor": "transparent",
+                    "fontSize": "1.5vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "textAlign": "center"
+                }
+            },
+            "id": "title2",
+            "layout": {
+                "x": 12.5,
+                "w": 11.5,
+                "h": 1,
+                "y": 2,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/Sw_OnOff"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "green"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Bündel Etikett\nAN"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "red"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Bündel Etikett\nAUS"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "yellow"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Bündel Etikett\n-"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "w": 0,
+                "h": 0,
+                "y": 0,
+                "static": true
+            },
+            "id": "value_0"
+        },
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "border-radius": "1.5vw",
+                    "color": "white",
+                    "textAlign": "center",
+                    "fontSize": "1.2vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "backgroundColor": "transparent",
+                    "word-break": "break-word",
+                    "text-shadow": "1px 1px 25px black"
+                }
+            },
+            "id": "_DEMO_Sw_OnOff",
+            "layout": {
+                "x": 0.5,
+                "w": 5.25,
+                "h": 1.8,
+                "y": 3.0,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/InmationBase/sensordashboardLDEMO/sensordashboard_Bündel Etikett"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "none"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "static": true
+            },
+            "id": "luaValue_0"
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/Sw_OnOff"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "green"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "V-Karton Etikett\nAN"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "red"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "V-Karton Etikett\nAUS"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "yellow"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "V-Karton Etikett\n-"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "w": 0,
+                "h": 0,
+                "y": 0,
+                "static": true
+            },
+            "id": "value_1"
+        },
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "border-radius": "1.5vw",
+                    "color": "white",
+                    "textAlign": "center",
+                    "fontSize": "1.2vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "backgroundColor": "transparent",
+                    "word-break": "break-word",
+                    "text-shadow": "1px 1px 25px black"
+                }
+            },
+            "id": "_DEMO_Sw_OnOff",
+            "layout": {
+                "x": 6.75,
+                "w": 5.25,
+                "h": 1.8,
+                "y": 3.0,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/InmationBase/sensordashboardLDEMO/sensordashboard_V-Karton Etikett"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "none"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "static": true
+            },
+            "id": "luaValue_1"
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/Sw_OnOff"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "green"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Aggregation FS\nAN"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "red"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Aggregation FS\nAUS"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "yellow"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Aggregation FS\n-"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "w": 0,
+                "h": 0,
+                "y": 0,
+                "static": true
+            },
+            "id": "value_2"
+        },
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "border-radius": "1.5vw",
+                    "color": "white",
+                    "textAlign": "center",
+                    "fontSize": "1.2vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "backgroundColor": "transparent",
+                    "word-break": "break-word",
+                    "text-shadow": "1px 1px 25px black"
+                }
+            },
+            "id": "_DEMO_Sw_OnOff",
+            "layout": {
+                "x": 13.0,
+                "w": 5.25,
+                "h": 1.8,
+                "y": 3.0,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/InmationBase/sensordashboardLDEMO/sensordashboard_Aggregation FS"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "none"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "static": true
+            },
+            "id": "luaValue_2"
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/Sw_OnOff"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "green"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Aggregations-kontrolle\nAN"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "red"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Aggregations-kontrolle\nAUS"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "yellow"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "Aggregations-kontrolle\n-"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "w": 0,
+                "h": 0,
+                "y": 0,
+                "static": true
+            },
+            "id": "value_3"
+        },
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "border-radius": "1.5vw",
+                    "color": "white",
+                    "textAlign": "center",
+                    "fontSize": "1.2vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "backgroundColor": "transparent",
+                    "word-break": "break-word",
+                    "text-shadow": "1px 1px 25px black"
+                }
+            },
+            "id": "_DEMO_Sw_OnOff",
+            "layout": {
+                "x": 18.25,
+                "w": 5.25,
+                "h": 1.8,
+                "y": 3.0,
+                "static": true
+            }
+        },
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "/DEMO/InmationBase/sensordashboardLDEMO/sensordashboard_Aggregations-kontrolle"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "none"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "_DEMO_Sw_OnOff",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "static": true
+            },
+            "id": "luaValue_3"
+        },
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "text": "Sensordashboard - LDEMO",
+            "captionBar": {
+                "hidden": true,
+                "title": "Simple Text Widget",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "thick solid black",
+                    "color": "black",
+                    "backgroundColor": "lightblue",
+                    "textAlign": "center",
+                    "fontSize": "2.5vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "text-shadow": "1px 1px 25px white"
+                }
+            },
+            "layout": {
+                "x": 0.5,
+                "y": 0.5,
+                "w": 23,
+                "h": 1.5,
+                "static": true
+            },
+            "id": "f_UV"
+        }
+    ],
+    "options": {
+        "stacking": "vertical",
+        "numberOfColumns": 24
+    }
+}

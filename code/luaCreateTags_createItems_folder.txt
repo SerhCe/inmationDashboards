@@ -1,0 +1,6 @@
+        {
+            class = syslib.model.classes.GenFolder,
+            operation = syslib.model.codes.MassOp.UPSERT,
+            path = base .. "%s",
+            ["ObjectName"] = "%s"
+        },

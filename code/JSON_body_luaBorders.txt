@@ -1,0 +1,86 @@
+,
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "%s"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": true
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "none"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": false
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.border",
+                                                "value": "0.75vw solid yellow"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "static": true
+            },
+            "id": "%s"
+        }

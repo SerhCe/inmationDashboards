@@ -1,0 +1,152 @@
+        {
+            "type": "text",
+            "name": "DC4711",
+            "description": "Process Data DC4711",
+            "dataSource": {
+                "type": "subscribe",
+                "path": "%s"
+            },
+            "actions": {
+                "willUpdate": [
+                    {
+                        "type": "switch",
+                        "checkAll": false,
+                        "case": [
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": 1
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "green"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "%s\nAN"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": 0
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "red"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "%s\nAUS"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {
+                                    "v": {
+                                        "$eq": 2
+                                    }
+                                },
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "red"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "%s\nAUS"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "match": {},
+                                "action": [
+                                    {
+                                        "type": "modify",
+                                        "id": "%s",
+                                        "set": [
+                                            {
+                                                "name": "model.options.style.backgroundColor",
+                                                "value": "yellow"
+                                            },
+                                            {
+                                                "name": "model.text",
+                                                "value": "%s\n-"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "layout": {
+                "x": 19,
+                "w": 0,
+                "h": 0,
+                "y": 0,
+                "static": true
+            },
+            "id": "%s"
+        },
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "captionBar": {
+                "hidden": true,
+                "title": "",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "border-radius": "1.5vw",
+                    "color": "white",
+                    "textAlign": "center",
+                    "fontSize": "1.2vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "backgroundColor": "transparent",
+                    "word-break": "break-word",
+                    "text-shadow": "1px 1px 25px black"
+                }
+            },
+            "id": "%s",
+            "layout": {
+                "x": %s,
+                "w": %s,
+                "h": %s,
+                "y": %s,
+                "static": true
+            }
+        }

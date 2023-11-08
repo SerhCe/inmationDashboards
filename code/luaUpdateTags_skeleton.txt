@@ -1,0 +1,41 @@
+function compareLinkAndExpectedValue(link, expectedValue) --compares current Link Value and Expected Value of that tag
+    if (link == expectedValue) then
+        return true
+    elseif (link == 1 and expectedValue == true) then --tracking mode option
+        return true
+    else
+        return false
+    end
+end
+
+function updateExpectedValue(MasterDataID) --updates Expected Value of tag depending on MasterDataID
+    --luaUpdateTags_updateExpectedValues
+%s
+end
+
+function setSensordashboardValues() --sets the tags to their compared value 
+    --luaUpdateTags_setSensordashboardValues
+%s
+end
+
+function sleep(sleeptime) --sleep in case of inmation lag
+    print("Now waiting ", sleeptime, "ms")
+    syslib.sleep(sleeptime)
+    print("Waiting finished...")
+end
+
+function getVariables()  --gets values for and sets all the needed variables
+    --luaUpdateTags_getVariables_masterData
+%s
+
+    --luaUpdateTags_getVariables_tags
+%s
+end
+
+getVariables()
+sleep(3000)
+updateExpectedValue(masterData)
+sleep(3000)
+getVariables()
+sleep(3000)
+setSensordashboardValues()

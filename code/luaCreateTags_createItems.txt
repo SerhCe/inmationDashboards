@@ -1,0 +1,19 @@
+        {
+            class = syslib.model.classes.HolderItem,
+            operation = syslib.model.codes.MassOp.UPSERT,
+            path = base .. "%s",
+            ["ObjectName"] = "%s"
+        },
+        {
+            class = syslib.model.classes.LinkItem,
+            operation = syslib.model.codes.MassOp.UPSERT,
+            path = base .. "%s",
+            ["ObjectName"] = "%s",
+            ["LinkedItem"] = "%s"
+        },
+        {
+            class = syslib.model.classes.Variable,
+            operation = syslib.model.codes.MassOp.UPSERT,
+            path =  base .. "%s",
+            ["ObjectName"] = "%s"
+        },

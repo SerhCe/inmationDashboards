@@ -1,0 +1,7 @@
+        {
+            class = syslib.model.classes.LinkItem,
+            operation = syslib.model.codes.MassOp.UPSERT,
+            path =  base .. "%s",
+            ["ObjectName"] = "%s",
+            ["LinkedItem"] = "%s"
+        },

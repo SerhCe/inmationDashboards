@@ -1,0 +1,32 @@
+,
+        {
+            "type": "text",
+            "name": "Simple Text",
+            "description": "Simple Text",
+            "text": "Sensordashboard - %s",
+            "captionBar": {
+                "hidden": true,
+                "title": "Simple Text Widget",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "thick solid black",
+                    "color": "black",
+                    "backgroundColor": "lightblue",
+                    "textAlign": "center",
+                    "fontSize": "2.5vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "text-shadow": "1px 1px 25px white"
+                }
+            },
+            "layout": {
+                "x": 0.5,
+                "y": 0.5,
+                "w": 23,
+                "h": 1.5,
+                "static": true
+            },
+            "id": "f_UV"
+        }

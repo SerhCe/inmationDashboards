@@ -1,0 +1,42 @@
+base = "%s"
+
+function createTags() -- creates Folderstructure + Tags
+
+    syslib.mass({
+        --luaCreateTags_createItems_folder
+%s
+
+        --luaCreateTags_createItems_actionItemFunction
+%s
+
+        --luaCreateTags_createItems_masterData
+%s
+
+        --luaCreateTags_createItems
+%s
+    })
+
+    print("Tags created!")
+end
+
+function setTriggerLink() --sets trigering links for the updater script
+    --luaCreateTags_setTriggerLinks_functionLocation
+%s
+
+    --luaCreateTags_setTriggerLinks
+%s
+    })
+
+    print("Triggering Links set!")
+end
+
+function sleep(sleeptime) --sleep in case of inmation lag
+    print("Now waiting ", sleeptime, "ms")
+    syslib.sleep(sleeptime)
+    print("Waiting finished...")
+end
+
+
+createTags()
+sleep(15000)
+setTriggerLink()

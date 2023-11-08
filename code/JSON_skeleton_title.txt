@@ -1,0 +1,29 @@
+        {
+            "type": "text",
+            "name": "title",
+            "description": "Simple Text",
+            "text": "%s",
+            "captionBar": {
+                "hidden": true,
+                "title": "Simple Text Widget",
+                "showModelEditorButton": true
+            },
+            "options": {
+                "style": {
+                    "border": "none",
+                    "backgroundColor": "transparent",
+                    "fontSize": "1.5vw",
+                    "fontWeight": "bold",
+                    "fontFamily": "\"Courier New\", Courier, sans-serif",
+                    "textAlign": "center"
+                }
+            },
+            "id": "title%s",
+            "layout": {
+                "x": %s,
+                "w": %s,
+                "h": 1,
+                "y": 2,
+                "static": true
+            }
+        }
